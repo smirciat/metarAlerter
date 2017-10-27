@@ -1,0 +1,25 @@
+<div class="indent">
+  <div class="row">
+    <div ng-repeat="airport in main.airports track by $index">
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <a href="#" ng-click="main.delete(airport)"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+        <a href="#" class="name">{{airport.icao + ': ' + airport.name}}</a>
+        <div class="tableRow" tooltip-placement="bottom" uib-tooltip="{{airport.raw}}" ng-click="main.toggle($index)">
+          <div class="cell" ng-class="airport.visibilityColor">
+            <h4>Vis</h4>
+            <h4>{{(airport.visibility)}}</h4>
+          </div>
+          <div class="cell" ng-class="airport.ceilingColor">
+            <h4>Ceiling</h4>
+            <h4>{{airport.ceiling}}</h4>
+          </div>
+          <div class="cell" ng-class="airport.windColor">
+            <h4>Wind</h4>
+            <h4>{{airport.wind}}</h4>
+          </div>
+        </div>
+        </br>
+      </div>
+    </div>
+  </div>    
+</div>
